@@ -10,44 +10,43 @@
     <script src="./main.js" defer type="module"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="w-100 d-flex justify-content-center border-bottom pb-4">
-            <div class="d-flex flex-column w-50">
-                <div id="presupuestoDisponible">
-                    <h2 class="text-center">Presupuesto Disponible</h2>
-                    <p class="text-center fs-1">$ 0</p>
+    <div class="container-fluid">
+        <div class="border-bottom containerHeader">
+            <div class="py-4 w-100 d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.3);">
+                <div class="d-flex flex-column text-white" style="width: 50%;">
+                    <div id="presupuestoDisponible">
+                        <!-- aqui va el presupuesto disponible -->
+                    </div>
+                <div class="d-flex justify-content-between aling-center my-1 px-5 py-2" style="background-color: #00ffb3;" id="totalIngresos">
+                        <!-- aqui va el totalIngresos -->
                 </div>
-            <div class="bg-primary d-flex justify-content-around aling-center my-1" id="totalIngresos">
-                    <p class="mb-2 mt-2">Ingresos</p>
-                    <p class="mb-2 mt-2">$ 0</p>
+                <div class="bg-danger d-flex justify-content-between aling-center my-1 py-2" style="background-color: #ff2600;" id="totalEgresos"> 
+                    <!-- aqui va el totalEgresos -->
+                </div>
             </div>
-            <div class="bg-danger d-flex justify-content-around aling-center my-1" id="totalEgresos"> 
-                <p class="mb-2 mt-2">Egresos</p>
-                <p class="mb-2 mt-2">$ 0</p>
             </div>
         </div>
-        </div>
-        <div class="mt-4 d-flex justify-content-center border-bottom pb-4">
-            <form class="d-flex" id="myFormulario">
+        <div class="pt-4 d-flex justify-content-center border-bottom pb-4" style="background-color:#efefef;">
+            <form class="d-flex fs-5" id="myFormulario">
                     <select name="option">
-                        <option value="ingreso">+</option>
-                        <option value="egreso">-</option>
+                        <option value="ingreso">Ingreso(+)</option>
+                        <option value="egreso">Egreso(-)</option>
                     </select>
-                <input class="mx-2" type="text" name="tarea" placeholder="Digite su tarea">
-                <input class="mx-2" type="number" name="valor" >
-                <input class="mx-2" type="submit" name="guardar">
+                <input class="mx-2" type="text" name="tarea" placeholder="Digite el Evento">
+                <input class="mx-2" type="number" name="valor" placeholder="Valor" >
+                <input class="mx-2" type="submit" name="guardar" value="Aceptar">
             </form>
         </div>
-        <div class="container">
-            <div class="row">
+        <div class="container mt-4">
+            <div class="row gx-5">
                 <div class="col-6">
-                    <h2>INGRESOS</h2>
-                    <ul id="ingresos">
+                    <h2 class="text-center border-bottom" style="color: #00ffb3;">INGRESOS</h2>
+                    <ul  id="listIngresos">
                     </ul>
                 </div>
                 <div class="col-6">
-                    <h2>EGRESOS</h2>
-                    <ul id="egresos">
+                    <h2 class="text-center border-bottom" style="color: #ff2600;">EGRESOS</h2>
+                    <ul id="listEgresos">
                     </ul>
                 </div>
             </div>

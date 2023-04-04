@@ -1,0 +1,31 @@
+/* my styles */
+@font-face {
+    font-family: "binario";
+    src: url(../assets/DS-DIGI.TTF);
+}
+body{
+    font-family: "binario";
+}
+.containerHeader{
+    background-image: url(../assets/fondo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.containerHeader h1{
+    font-size: 1.9rem;
+}
+ p{
+    font-size: 1.5rem;
+}
+.containerHeader .total{
+    font-size: 5.6rem;
+}
+.porcentaje_egreso{
+    background-color: #ffffff3d;
+}
+.porcentaje_egreso p{
+    font-size: 1.1rem;
+}
+ul li{
+    text-decoration: none;
+}
