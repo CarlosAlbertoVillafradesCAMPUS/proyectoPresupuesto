@@ -27,7 +27,7 @@ export let wsMyHeader = {
                 </div>
                 ${(parametro.porcentaje == 0) 
                     ?``
-                    :`<div class="mb-2 mt-2 mx-3 p-1 text-center porcentaje_egreso"><p class="m-0">${parametro.porcentaje.toFixed(2)}%</p></div>`}
+                    :`<div class="mb-2 mt-2 mx-3 p-1 text-center rounded porcentaje_egreso"><p class="m-0">${parametro.porcentaje.toFixed(2)}%</p></div>`}
                 </div> `
                 return plantilla
     },
@@ -51,7 +51,7 @@ export let wsMyHeader = {
                     <p class="mb-0">${val.tarea}</p>
                     <div class="d-flex">
                     <p class="mx-2 mb-0" style="color: #ff2600;"> -$${new Intl.NumberFormat().format(val.valor)}</p>
-                    <p class="p-1 mb-0 text-center text-white fs-6 rounded" style="background-color: #ff09093d;">${((val.valor*100)/p1.secundaria).toFixed(2)}%</p>
+                    <p class="p-1 mb-0 text-center text-white fs-6 rounded" style="background-color: #ff09098d;">${((val.valor*100)/p1.secundaria).toFixed(2)}%</p>
                     </div>
                 </div>
             </li>`

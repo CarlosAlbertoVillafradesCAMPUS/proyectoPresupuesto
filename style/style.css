@@ -14,11 +14,14 @@ body{
 .containerHeader h1{
     font-size: 1.9rem;
 }
- p{
+.header{
+    width: 40%;
+}
+p{
     font-size: 1.5rem;
 }
 .containerHeader .total{
-    font-size: 5.6rem;
+    font-size: 5em;
 }
 .porcentaje_egreso{
     background-color: #ffffff3d;
@@ -26,6 +29,24 @@ body{
 .porcentaje_egreso p{
     font-size: 1.1rem;
 }
+.content-formulario{
+    background-color: #27283d;
+    border-bottom: 1px solid #000dc9fd ;
+}
+.bi-check-circle{
+    fill: white;
+    transition: all .5s ease;
+}
+.bi-check-circle:hover{
+    transition: all .5s ease;
+    fill: #000dc9fd;
+}
 ul li{
     text-decoration: none;
+}
+
+@media (max-width: 970px) {
+    .header{
+        width: 100%;
+    }
 }
