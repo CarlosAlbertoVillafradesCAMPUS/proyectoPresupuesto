@@ -26,36 +26,38 @@ export default {
     //     })
     // },
     obtenerInfo(){
-        let myFormulario = document.querySelector("#myFormulario");
-        let newArrayEgresos = [];
-        let newArrayIngresos =[];
         config.dataEgresosIngresos();
+        let myFormulario = document.querySelector("#myFormulario"); 
+        let newArrayIngresos = [];
+        let newArrayEgresos = [];
         myFormulario.addEventListener("submit", (e) => {
         e.preventDefault();
-        const infoLocal = Object.assign(JSON.parse(localStorage.getItem("principalData")))
+        let infoLocal = JSON.parse(localStorage.getItem("dataLocalStorage"))
 
         let mydata = Object.fromEntries(new FormData(e.target)); 
-        console.log(infoLocal)
 
-        if(mydata.option == "ingreso"){
-            newArrayIngresos.push(mydata)
-                infoLocal.data.ingresos = infoLocal.data.ingresos.concat(newArrayIngresos)
-                this.showIngresos(infoLocal.data.ingresos);
-                myFormulario.reset()     
         
-        }else{
+        if(mydata.option == "ingreso"){
+            newArrayIngresos.push(mydata);
+            infoLocal.data.ingresos = newArrayIngresos
+            this.listIngresos(infoLocal.data.ingresos);   
+        
+        }else{ 
+            console.log(newArrayEgresos); 
             newArrayEgresos.push(mydata)
-                infoLocal.data.egresos = infoLocal.data.egresos.concat(newArrayEgresos)
-                this.showEgresos(infoLocal.data.egresos);
-                myFormulario.reset()         
+            infoLocal.data.egresos = newArrayEgresos
+            this.listEgresos(infoLocal.data.egresos);       
         }
-        console.log(infoLocal.data.ingresos)
-        localStorage.setItem("principalData", JSON.stringify(infoLocal))
-        myHeader.showIngresos()
+        console.log(infoLocal);
+        localStorage.setItem('dataLocalStorage', JSON.stringify(infoLocal))
+        myHeader.showPresupuestoTotal(infoLocal);
+        myHeader.showIngresos(infoLocal);
+        myHeader.showEgresos(infoLocal)
+        myFormulario.reset() 
         }
         )
     },
-    showIngresos(p1){
+    listIngresos(p1){
         let contIngresos = document.querySelector("#ingresos");
         contIngresos.innerHTML = null
         contIngresos.insertAdjacentHTML("beforeend",
@@ -69,7 +71,7 @@ export default {
             </li>`
         }).join(""));
     },
-    showEgresos(p1){
+    listEgresos(p1){
         let contEgresos=document.querySelector("#egresos")
         contEgresos.innerHTML =  null
         contEgresos.insertAdjacentHTML("beforeend",
@@ -82,7 +84,7 @@ export default {
                 </div>
             </li>`
         }).join(""))
-    }
+    },
 }
 
 
