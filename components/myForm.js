@@ -3,10 +3,12 @@ import myHeader from "./myHeader.js";
 export default {
     obtenerInfo(){
         //preguntamos si hay informacion en localstorage
-        (localStorage.dataLocalStorage)
-        ? myHeader.showFragment()
-        :config.dataEgresosIngresos(); myHeader.showFragment();
-       
+        if(localStorage.dataLocalStorage){
+            myHeader.showFragment()
+        }else{
+            config.dataEgresosIngresos();
+             myHeader.showFragment();
+        }
         let myFormulario = document.querySelector("#myFormulario"); 
         // creamos 2 arrays para realizar operacions y despus remplazar la informacion de localStorage
         let newArrayIngresos = [];
