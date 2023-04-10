@@ -18,7 +18,7 @@ export default {
         }
         let total = ingreso - egreso
 
-        const ws = new Worker("../storage/wsMyHeader.js", {type:"module"})
+        const ws = new Worker("storage/wsMyHeader.js", {type:"module"})
 
         let id=[]
         let count = 0
