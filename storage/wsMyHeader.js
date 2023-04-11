@@ -2,7 +2,7 @@ export let wsMyHeader = {
     showPresupuestoTotal(p1){
         let ingreso = 0;
         let egreso = 0;
-        if(p1.data.egresos.length != 0){
+        if(p1.data.ingresos.length != 0 || p1.data.egresos.length != 0){
 
             p1.data.ingresos.forEach((val,id) => {
                 let number = parseInt(val.valor)
