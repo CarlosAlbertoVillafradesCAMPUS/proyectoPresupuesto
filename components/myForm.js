@@ -16,11 +16,7 @@ export default {
         myFormulario.addEventListener("submit", (e) => {
         e.preventDefault();
         let mydata = Object.fromEntries(new FormData(e.target)); 
-        if(mydata.tarea == "" || mydata.valor ==""){
-            alert("Algun campo esta vacio")
-        }else{
-            let infoLocal = JSON.parse(localStorage.getItem("dataLocalStorage"))
-       
+            let infoLocal = JSON.parse(localStorage.getItem("dataLocalStorage")) 
             if(mydata.option == "ingreso"){
                 newArrayIngresos = infoLocal.data.ingresos
                 newArrayIngresos.push(mydata);
@@ -36,8 +32,7 @@ export default {
             console.log(infoLocal);
             localStorage.setItem('dataLocalStorage', JSON.stringify(infoLocal))
             myHeader.showFragment();
-            myFormulario.reset() 
-        }  
+            myFormulario.reset()     
         }
         )
     },
